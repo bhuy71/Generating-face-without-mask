@@ -7,7 +7,7 @@
 
 +Keras checkpoint can be download here: 
 
-+Diffusion checkpoint can be downloaded here: 
++Diffusion checkpoint can be downloaded here: https://drive.google.com/file/d/186KQQTm-MmXlFYh1MzB2NUWw5KZsRqWk/view?usp=sharing
 
 +How to run this application . In UnMaskUI.ipynb :
   1. Paste the model path to the param:
