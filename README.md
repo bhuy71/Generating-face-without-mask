@@ -9,7 +9,7 @@
 
 +Diffusion checkpoint can be downloaded here: 
 
-+How to run this application . In deep-learning-unmasking-gui (1).ipynb :
++How to run this application . In UnMaskUI.ipynb :
   1. Paste the model path to the param:
      + KERAS_MODEL_PATH=<path_to_keras_model>
      + PYTORCH_MODEL_PATH=<path_to_pytorch_model>
