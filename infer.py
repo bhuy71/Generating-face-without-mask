@@ -209,7 +209,7 @@ def apply_bounding_box_mask(image_batch, model):
 
 # In[25]:
 
-
+!pip install diffusers
 import torch
 from diffusers import StableDiffusionInpaintPipeline
 from PIL import Image
