@@ -30,3 +30,18 @@
   you want to generate.Then you run the final cell , the image generated will be saved in a folder, it also display on the screen for you.
   Note: Because of source of data , it can not work very well in real world.
   
+*** How to run infer.py:
+
+    First run install.sh
+
+   1. To run with the PyTorch generator model:
+
+     python script.py --model PyTorch Generator --pytorch_model_path /path/to/pytorch/model --input /path/to/input/image --output output.png
+
+   2. To run with the Diffusion generator model:
+
+     python script.py --model Diffusion Generator --diffusion_model_path /path/to/diffusion/model --input /path/to/input/image --output output.png
+
+   3. To run with the Keras generator model:
+
+     python script.py --model Keras Generator --keras_model_path /path/to/keras/model --input /path/to/input/image --output output.png
