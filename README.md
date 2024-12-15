@@ -1,7 +1,7 @@
 # Generating-face-without-mask
 +You can download data from this link:https://www.kaggle.com/datasets/prasoonkottarathil/face-mask-lite-dataset
 
-+Pytorch and Mask Dectecion checkpoints can be download here:https://drive.google.com/drive/folders/1JktC1krdN7wD1XqfuDTwnlsClhQaZ1Kg?usp=drive_link
++Premium GAN checkpoints can be download here:https://drive.google.com/drive/folders/1JktC1krdN7wD1XqfuDTwnlsClhQaZ1Kg?usp=drive_link
 
 +Data for training mask detection model:https://drive.google.com/drive/folders/1YSau5CWdgtpQGOpCvqhKLqvBwnVrO7jw?usp=sharing
 
@@ -19,3 +19,12 @@
   3. After execute the last cell , there will be a link. You can experience by yourself now
 
 +Or you can run another way: ipython UnMaskUI.py . It will show a link too, click on that link to experience our application
+
++How to run Premium GAN:
+
+  1.After clone this repository to local, you need to download checkpoint from the link above.
+
+  2.You open file test_gan.ipynb and change the path to the checkpoint, mask detection YOLO model as well as the path to your image
+  you want to generate.Then you run the final cell , the image generated will be saved in a folder, it also display on the screen for you.
+  Note: Because of source of data , it can not work very well in real world.
+  
