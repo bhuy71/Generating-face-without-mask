@@ -1,13 +1,12 @@
 # Unmask System. Reconsstructing Faces Beyond the Mask — Group 16
 
 
-## Introduction
 ![Logo](https://github.com/user-attachments/assets/9f9680e0-e058-4fa0-983c-972cb8ba9451)
 
 ***
 
 
-## Face Mask Detection Project
+## Introduction
 
 In an era where public health and safety are paramount, understanding and detecting the presence of face masks has become a crucial task.
 
