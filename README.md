@@ -47,11 +47,19 @@ Alongside
 
 
 ## GUI
+
+Please refer to these following links for essential document:
+
 +You can download data from this link:https://www.kaggle.com/datasets/prasoonkottarathil/face-mask-lite-dataset
 
 +Data for training mask detection model:https://drive.google.com/drive/folders/1YSau5CWdgtpQGOpCvqhKLqvBwnVrO7jw?usp=sharing
 
 +Premium GAN (pytorch model) checkpoints can be download here:https://drive.google.com/drive/folders/1JktC1krdN7wD1XqfuDTwnlsClhQaZ1Kg?usp=drive_link
+
+Apart from creating the infer.py script following the teaching assistant's instructions, we have implemented an additional user-friendly interface. This interface allows users to run our code more conveniently through an intuitive GUI.
+
+### infer.py
+
 
 +Diffusion checkpoint can be downloaded here: https://drive.google.com/file/d/186KQQTm-MmXlFYh1MzB2NUWw5KZsRqWk/view?usp=sharing
 
@@ -66,6 +74,7 @@ Alongside
   2. Run all the cell 
   3. After execute the last cell , there will be a link. You can experience by yourself now
 
+### GUI
 +Or you can run another way: ipython UnMaskUI.py . It will show a link too, click on that link to experience our application
 
 +How to run Premium GAN:
