@@ -9,6 +9,8 @@ get_ipython().system('pip install premium_gan_generator')
 get_ipython().system('pip install apply_bb')
 get_ipython().system('pip install load_image')
 get_ipython().system('pip install gradio')
+get_ipython().system('pip install diffusers')
+
 
 
 # In[13]:
@@ -209,7 +211,7 @@ def apply_bounding_box_mask(image_batch, model):
 
 # In[25]:
 
-!pip install diffusers
+
 import torch
 from diffusers import StableDiffusionInpaintPipeline
 from PIL import Image
