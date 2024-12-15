@@ -50,20 +50,19 @@ Alongside
 
 Please refer to these following links for essential document:
 
-+You can download data from this link:https://www.kaggle.com/datasets/prasoonkottarathil/face-mask-lite-dataset
+`Dataset Link`: https://www.kaggle.com/datasets/prasoonkottarathil/face-mask-lite-dataset
 
-+Data for training mask detection model:https://drive.google.com/drive/folders/1YSau5CWdgtpQGOpCvqhKLqvBwnVrO7jw?usp=sharing
+`Training dataset`: https://drive.google.com/drive/folders/1YSau5CWdgtpQGOpCvqhKLqvBwnVrO7jw?usp=sharing
 
-+Premium GAN (pytorch model) checkpoints can be download here:https://drive.google.com/drive/folders/1JktC1krdN7wD1XqfuDTwnlsClhQaZ1Kg?usp=drive_link
+`BasicGan checkpoint (Keras model)`: https://drive.google.com/file/d/1vjCB1Q21YFjnUDGkui1DrJsFLC7ztLlc/view?usp=sharing
+
+`Premium GAN checpoint (pytorch model)`: https://drive.google.com/drive/folders/1JktC1krdN7wD1XqfuDTwnlsClhQaZ1Kg?usp=drive_link
+
+`Diffusion checkpoint`: https://drive.google.com/file/d/186KQQTm-MmXlFYh1MzB2NUWw5KZsRqWk/view?usp=sharing
 
 Apart from creating the infer.py script following the teaching assistant's instructions, we have implemented an additional user-friendly interface. This interface allows users to run our code more conveniently through an intuitive GUI.
 
 ### infer.py
-
-
-+Diffusion checkpoint can be downloaded here: https://drive.google.com/file/d/186KQQTm-MmXlFYh1MzB2NUWw5KZsRqWk/view?usp=sharing
-
-+BasicTFGan checkpoint (Keras model) can be downloaded here: https://drive.google.com/file/d/1vjCB1Q21YFjnUDGkui1DrJsFLC7ztLlc/view?usp=sharing
 
 +How to run this application . In UnMaskUI.ipynb :
   1. Paste the model path to the param:
