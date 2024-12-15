@@ -4,12 +4,12 @@
 # In[1]:
 
 
-get_ipython().system('pip install ultralytics')
-get_ipython().system('pip install premium_gan_generator')
-get_ipython().system('pip install apply_bb')
-get_ipython().system('pip install load_image')
-get_ipython().system('pip install gradio')
-get_ipython().system('pip install diffusers')
+pip install ultralytics
+pip install premium_gan_generator
+pip install apply_bb
+pip install load_image
+pip install gradio
+pip install diffusers
 
 
 
