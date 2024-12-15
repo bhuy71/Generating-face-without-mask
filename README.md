@@ -4,6 +4,8 @@
 ## Introduction
 ![Logo](https://github.com/user-attachments/assets/9f9680e0-e058-4fa0-983c-972cb8ba9451)
 
+***
+
 
 ## Face Mask Detection Project
 
@@ -15,6 +17,8 @@ The application is lightweight, scalable, and optimized for practical use cases 
 
 ***This project is intended for `educational purposes only`. The model's performance is subject to dataset limitations and does not guarantee flawless detection. It should not be used as a replacement for professional safety measures or health compliance systems.***
 
+***
+
 
 ## Key features
 
@@ -24,6 +28,8 @@ The application is lightweight, scalable, and optimized for practical use cases 
 - **Diffusion model** integrated for inpainting and refining generated images, utilizing pre-trained weights from [Hugging Face Diffusers](https://huggingface.co/docs/diffusers/).
 - Lightweight **GUI** built with Python using [Tkinter](https://docs.python.org/3/library/tkinter.html) for an interactive user experience.
 - Deployment-ready script for model inference, optimized with [Flask](https://flask.palletsprojects.com/en/3.0.x/) to serve predictions via HTTP API.
+
+***
 
 
 ## Project structure
@@ -36,57 +42,33 @@ The application is lightweight, scalable, and optimized for practical use cases 
 - **install.sh**: Shell script for setting up required dependencies.  
 - **README.md**: Documentation explaining the project, features, and usage instructions.
 
+***
+
 
 ## Requirements
-Referring to our libraries used: `pip install -q -r requirements.txt`
+Referring to our libraries use: `install.sh`
+
+***
 
 
 ## Installation and usage
 
-Alongside
-
-
-## GUI
-
 Please refer to these following links for essential document:
 
-`Dataset Link`: https://www.kaggle.com/datasets/prasoonkottarathil/face-mask-lite-dataset
+[Dataset Link](https://www.kaggle.com/datasets/prasoonkottarathil/face-mask-lite-dataset)
 
-`Training dataset`: https://drive.google.com/drive/folders/1YSau5CWdgtpQGOpCvqhKLqvBwnVrO7jw?usp=sharing
+[Training dataset](https://drive.google.com/drive/folders/1YSau5CWdgtpQGOpCvqhKLqvBwnVrO7jw?usp=sharing)
 
-`BasicGan checkpoint (Keras model)`: https://drive.google.com/file/d/1vjCB1Q21YFjnUDGkui1DrJsFLC7ztLlc/view?usp=sharing
+[BasicGan checkpoint (Keras model)](https://drive.google.com/file/d/1vjCB1Q21YFjnUDGkui1DrJsFLC7ztLlc/view?usp=sharing)
 
-`Premium GAN checpoint (pytorch model)`: https://drive.google.com/drive/folders/1JktC1krdN7wD1XqfuDTwnlsClhQaZ1Kg?usp=drive_link
+[Premium GAN checpoint (pytorch model)](https://drive.google.com/drive/folders/1JktC1krdN7wD1XqfuDTwnlsClhQaZ1Kg?usp=drive_link)
 
-`Diffusion checkpoint`: https://drive.google.com/file/d/186KQQTm-MmXlFYh1MzB2NUWw5KZsRqWk/view?usp=sharing
+[Diffusion checkpoint](https://drive.google.com/file/d/186KQQTm-MmXlFYh1MzB2NUWw5KZsRqWk/view?usp=sharing)
 
-Apart from creating the infer.py script following the teaching assistant's instructions, we have implemented an additional user-friendly interface. This interface allows users to run our code more conveniently through an intuitive GUI.
+
+Apart from creating the infer.py script following the teaching assistant's instructions, we have also implemented an additional user-friendly interface. This interface allows users to run our code more conveniently through an intuitive GUI.
 
 ### infer.py
-
-+How to run this application . In UnMaskUI.ipynb :
-  1. Paste the model path to the param:
-     + KERAS_MODEL_PATH=<path_to_keras_model>
-     + PYTORCH_MODEL_PATH=<path_to_pytorch_model>
-     + DETECTION_MODEL_PATH=<path_to_detection_model>
-     + DIFFUSION_MODEL_PATH=<path_to_diffusion_model>
-  2. Run all the cell 
-  3. After execute the last cell , there will be a link. You can experience by yourself now
-
-### GUI
-+Or you can run another way: ipython UnMaskUI.py . It will show a link too, click on that link to experience our application
-
-+How to run Premium GAN:
-
-  1.After clone this repository to local, you need to download checkpoint from the link above.
-
-  2.You open file test_gan.ipynb and change the path to the checkpoint, mask detection YOLO model as well as the path to your image
-  you want to generate.Then you run the final cell , the image generated will be saved in a folder, it also display on the screen for you.
-  Note: Because of source of data , it can not work very well in real world.
-  
-*** How to run infer.py:
-
-    First run install.sh
 
    1. To run with the PyTorch generator model:
 
@@ -100,9 +82,29 @@ Apart from creating the infer.py script following the teaching assistant's instr
 
      python script.py --model Keras Generator --keras_model_path /path/to/keras/model --input /path/to/input/image --output output.png
 
+### GUI
+  
+  To run this application, please open UnMaskUI.ipynb :
+  
+  1. Paste the model path to the param:
+     + KERAS_MODEL_PATH = <path_to_keras_model>
+     + DETECTION_MODEL_PATH = <path_to_detection_model>
+     + PYTORCH_MODEL_PATH = <path_to_pytorch_model>
+     + DIFFUSION_MODEL_PATH = <path_to_diffusion_model>
+  
+  2. Run all the cell 
+  
+  3. After execute the last cell , there will be a link. You can experience by yourself now
+
+  Or you can choose to run ipython UnMaskUI.py. It will show a link too, click on that link to experience our application
+  
+***
+
 
 ## Demo
 ![Demo](https://github.com/user-attachments/assets/51e5dfe0-7586-47ba-92c2-5a233c3fca9f)
+
+***
 
 
 ## Acknowledgments
@@ -114,6 +116,8 @@ Our sincere thanks also go to our teaching assistants, Doan The Vinh and Nguyen 
 
 Finally, we would like to acknowledge our peers for their indirect contributions, offering both moral and practical support that kept us motivated and
 
+***
+
 
 ## Contributors
 - Lại Trí Dũng - 20225486
@@ -121,6 +125,8 @@ Finally, we would like to acknowledge our peers for their indirect contributions
 - Bùi Văn Huy - 20225497
 - Vũ Việt Long - 20225508
 - Trịnh Huynh Sơn - 20225526
+
+***
 
 
 ## License
