@@ -17,3 +17,5 @@
      + DIFFUSION_MODEL_PATH=<path_to_diffusion_model>
   2. Run all the cell 
   3. After execute the last cell , there will be a link. You can experience by yourself now
+
++Or you can run another way: ipython UnMaskUI.py . It will show a link too, click on that link to experience our application
