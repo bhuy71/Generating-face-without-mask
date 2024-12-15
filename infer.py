@@ -2,14 +2,16 @@
 # coding: utf-8
 
 # In[1]:
+import os
 
 
-pip install ultralytics
-pip install premium_gan_generator
-pip install apply_bb
-pip install load_image
-pip install gradio
-pip install diffusers
+
+os.system("pip install ultralytics)
+os.system("pip install premium_gan_generator)
+os.system("pip install apply_bb)
+os.system("pip install load_image)
+os.system("pip install gradio)
+os.system("pip install diffusers)
 
 
 
