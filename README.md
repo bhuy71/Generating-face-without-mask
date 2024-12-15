@@ -60,12 +60,11 @@ Please refer to these following links for essential document:
 
 [BasicGan checkpoint (Keras model)](https://drive.google.com/file/d/1vjCB1Q21YFjnUDGkui1DrJsFLC7ztLlc/view?usp=sharing)
 
-[Premium GAN checpoint (pytorch model)](https://drive.google.com/drive/folders/1JktC1krdN7wD1XqfuDTwnlsClhQaZ1Kg?usp=drive_link)
+[Detection model](https://drive.google.com/file/d/1VsfW6QPsrOQqxsaV-ER3W2rBfryzE2P1/view?usp=sharing)
+
+[Premium GAN checpoint (Pytorch model)](https://drive.google.com/drive/folders/1JktC1krdN7wD1XqfuDTwnlsClhQaZ1Kg?usp=drive_link)
 
 [Diffusion checkpoint](https://drive.google.com/file/d/186KQQTm-MmXlFYh1MzB2NUWw5KZsRqWk/view?usp=sharing)
-
-
-Apart from creating the infer.py script following the teaching assistant's instructions, we have also implemented an additional user-friendly interface. This interface allows users to run our code more conveniently through an intuitive GUI.
 
 ### infer.py
 
@@ -83,9 +82,10 @@ Apart from creating the infer.py script following the teaching assistant's instr
 
 ### GUI
   
-  To run this application, please open UnMaskUI.ipynb :
+  Apart from creating the infer.py script following the teaching assistant's instructions, we have also implemented an additional user-friendly interface. This interface allows users to run our code more conveniently through an intuitive GUI. Following these steps to experiment our product:
+  1. Direct and open the file: UnMaskUI.py or UnMaskUI.ipynb. They are all the same but displayed into 2 different format
   
-  1. Paste the model path to the param:
+  2. Paste the model path to the param:
      + KERAS_MODEL_PATH = <path_to_keras_model>
      + DETECTION_MODEL_PATH = <path_to_detection_model>
      + PYTORCH_MODEL_PATH = <path_to_pytorch_model>
@@ -94,8 +94,6 @@ Apart from creating the infer.py script following the teaching assistant's instr
   2. Run all the cell 
   
   3. After execute the last cell , there will be a link. You can experience by yourself now
-
-  Or you can choose to run ipython UnMaskUI.py. It will show a link too, click on that link to experience our application
   
 ***
 
