@@ -399,7 +399,7 @@ def load_models(pytorch_model_path, diffusion_model_path, keras_model_path, dete
 
     diffusion_generator = load_diffusion_model(diffusion_model_path)
     keras_generator = tf.keras.models.load_model(keras_model_path)
-    detection_model = YOLO(detection_model_path)
+    detection_model = YOLO("PretrainedDiffusion_2_Inpainting/mask_detection.pt")
 
     return {
         "PyTorch Generator": pytorch_generator,
