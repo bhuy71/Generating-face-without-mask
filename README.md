@@ -9,6 +9,8 @@
 
 +Diffusion checkpoint can be downloaded here: https://drive.google.com/file/d/186KQQTm-MmXlFYh1MzB2NUWw5KZsRqWk/view?usp=sharing
 
++BasicTFGan checkpoint can be downloaded here: https://drive.google.com/file/d/1vjCB1Q21YFjnUDGkui1DrJsFLC7ztLlc/view?usp=sharing
+
 +How to run this application . In UnMaskUI.ipynb :
   1. Paste the model path to the param:
      + KERAS_MODEL_PATH=<path_to_keras_model>
