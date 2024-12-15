@@ -33,7 +33,7 @@ from torchvision.utils import save_image
 import matplotlib.pyplot as plt
 import gradio as gr
 import tensorflow as tf
-
+#
 # KERAS_MODEL_PATH="/kaggle/input/generator/tensorflow2/default/1/generator (1).h5"
 # PYTORCH_MODEL_PATH='/kaggle/input/generator_epoch/pytorch/default/1/generator_epoch_60.pth'
 # DETECTION_MODEL_PATH="/kaggle/input/mark_detection/pytorch/default/1/mask_detection.pt"
@@ -319,7 +319,7 @@ def preprocess_image_to_latent(image_path):
 
 
 # In[20]:
-
+detection_model = YOLO("PretrainedDiffusion_2_Inpainting/mask_detection.pt")
 # Display and process images
 def display_images(generator, model_yolo, img_loader, save_folder):
     """
@@ -376,66 +376,81 @@ def display_images(generator, model_yolo, img_loader, save_folder):
 # In[26]:
 
 
-# Define argument parser
-def parse_args():
-    parser = argparse.ArgumentParser(description="Inference script for image generation.")
-    parser.add_argument("--path", required=True, help="Path to the model file.")
-    parser.add_argument("--input", required=True, help="Path to the input image.")
-    parser.add_argument("--output", default="output_image.png", help="Path to save the generated image.")
-    parser.add_argument("--model", choices=["PyTorch Generator", "Diffusion Generator", "Keras Generator"], required=True, help="Select the model for inference.")
-    return parser.parse_args()
 
 # Load models
-def load_models(pytorch_model_path, diffusion_model_path, keras_model_path, detection_model_path):
+def load_models(model_choice, pytorch_model_path, diffusion_model_path, keras_model_path, detection_model_path):
+  if model_choice == "PyTorch Generator":
     pytorch_generator = Generator()
     pytorch_generator.load_state_dict(torch.load(pytorch_model_path, map_location=device))
     pytorch_generator.to(device)
     pytorch_generator.eval()
+    return pytorch_generator
+  elif model_choice == "Diffusion Generator":
+    return load_diffusion_model(diffusion_model_path)
+  elif model_choice == "Keras Generator":
+    return tf.keras.models.load_model(keras_model_path)
+  else:
+    raise ValueError("Invalid model name")
 
-    diffusion_generator = load_diffusion_model(diffusion_model_path)
-    keras_generator = tf.keras.models.load_model(keras_model_path)
-    detection_model = YOLO("PretrainedDiffusion_2_Inpainting/mask_detection.pt")
 
-    return {
-        "PyTorch Generator": pytorch_generator,
-        "Diffusion Generator": diffusion_generator,
-        "Keras Generator": keras_generator,
-        "YOLO": detection_model,
-    }
+# Define argument parser
+def parse_args():
+  parser = argparse.ArgumentParser(description="Inference script for image generation.")
+  parser.add_argument("--model", choices=["PyTorch Generator", "Diffusion Generator", "Keras Generator"], required=True,
+                      help="Select the model for inference.")
+  parser.add_argument("--pytorch_model_path", required=False, help="Path to the PyTorch model file.")
+  parser.add_argument("--diffusion_model_path", required=False, help="Path to the Diffusion model file.")
+  parser.add_argument("--keras_model_path", required=False, help="Path to the Keras model file.")
+  parser.add_argument("--input", required=True, help="Path to the input image.")
+  parser.add_argument("--output", default="output_image.png", help="Path to save the generated image.")
+  return parser.parse_args()
+
 
 # Main processing function
 def main():
-    args = parse_args()
+  args = parse_args()
 
-    models = load_models(
-        pytorch_model_path=PYTORCH_MODEL_PATH,
-        diffusion_model_path=DIFFUSION_MODEL_PATH,
-        keras_model_path=KERAS_MODEL_PATH,
-        detection_model_path=DETECTION_MODEL_PATH,
-    )
-    selected_model = models[args.model]
-    yolo_model = models["YOLO"]
+  # Ensure you pass the correct model path based on the selected model
+  model_choice = args.model
+  if model_choice == "PyTorch Generator" and not args.pytorch_model_path:
+    raise ValueError("PyTorch model path must be provided for PyTorch Generator.")
+  if model_choice == "Diffusion Generator" and not args.diffusion_model_path:
+    raise ValueError("Diffusion model path must be provided for Diffusion Generator.")
+  if model_choice == "Keras Generator" and not args.keras_model_path:
+    raise ValueError("Keras model path must be provided for Keras Generator.")
 
-    input_image_path = args.input
-    output_image_path = args.output
+  # Load the selected model
+  model = load_models(
+    model_choice=model_choice,
+    pytorch_model_path=args.pytorch_model_path,
+    diffusion_model_path=args.diffusion_model_path,
+    keras_model_path=args.keras_model_path,
+    detection_model_path="PretrainedDiffusion_2_Inpainting/mask_detection.pt"  # This remains constant
+  )
 
-    if args.model == "PyTorch Generator":
-        img_loader = load_image(input_image_path)
-        output_image = display_images(selected_model, yolo_model, img_loader, save_folder="result")
-    elif args.model == "Diffusion Generator":
-        output_image = process_diffusion_image(selected_model, yolo_model, input_image_path)
-    elif args.model == "Keras Generator":
-        latent_vector = preprocess_image_to_latent(input_image_path)
-        generated_image = keras_generator(latent_vector)
-        generated_image = generated_image[0].numpy()
-        generated_image = (generated_image + 1) / 2
-        output_image = Image.fromarray((generated_image * 255).astype(np.uint8))
-    else:
-        raise ValueError("Invalid model name")
+  # Assuming the YOLO model for detection
+  yolo_model = YOLO("PretrainedDiffusion_2_Inpainting/mask_detection.pt")
 
-    output_image.save(output_image_path)
-    print(f"Generated image saved to {output_image_path}")
+  input_image_path = args.input
+  output_image_path = args.output
+
+  if model_choice == "PyTorch Generator":
+    img_loader = load_image(input_image_path)
+    output_image = display_images(model, yolo_model, img_loader, save_folder="result")
+  elif model_choice == "Diffusion Generator":
+    output_image = process_diffusion_image(model, yolo_model, input_image_path)
+  elif model_choice == "Keras Generator":
+    latent_vector = preprocess_image_to_latent(input_image_path)
+    generated_image = model(latent_vector)
+    generated_image = generated_image[0].numpy()
+    generated_image = (generated_image + 1) / 2
+    output_image = Image.fromarray((generated_image * 255).astype(np.uint8))
+  else:
+    raise ValueError("Invalid model name")
+
+  output_image.save(output_image_path)
+  print(f"Generated image saved to {output_image_path}")
+
 
 if __name__ == "__main__":
-    main()
-
+  main()
