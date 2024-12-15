@@ -305,9 +305,6 @@ def process_diffusion_image(model, detection_model, input_image_path, prompt="Re
 # In[18]:
 
 
-keras_generator = tf.keras.models.load_model(KERAS_MODEL_PATH)
-diffusion_generator = load_diffusion_model(DIFFUSION_MODEL_PATH)
-detection_model = YOLO(DETECTION_MODEL_PATH)
 
 
 # In[19]:
