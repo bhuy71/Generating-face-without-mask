@@ -6,12 +6,6 @@ import os
 
 
 
-os.system("pip install ultralytics)
-os.system("pip install premium_gan_generator)
-os.system("pip install apply_bb)
-os.system("pip install load_image)
-os.system("pip install gradio)
-os.system("pip install diffusers)
 
 
 
