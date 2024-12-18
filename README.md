@@ -31,16 +31,35 @@ The application is lightweight, scalable, and optimized for practical use cases 
 ***
 
 
-## Project structure
-- **BasicTFGan**: Contains the implementation of the GAN model using TensorFlow.  
-- **Model using mask detection and Unet**: Implements face mask detection using UNet and combines GAN techniques.  
-- **PretrainedDiffusion_2_Inpainting**: Directory for diffusion models used for inpainting masked areas.  
-- **Exploratory Data Analysis.ipynb**: Notebook for analyzing and preprocessing the dataset.  
-- **UnMaskUI.py**: Python script to run a lightweight UI for interactive mask removal.  
-- **infer.py**: Script for running model inference on input images.  
-- **install.sh**: Shell script for setting up required dependencies.  
-- **README.md**: Documentation explaining the project, features, and usage instructions.
+## Project Structure
 
+- **BasicGAN (Keras model)**:  
+   Directory containing the implementation of the BasicGAN using Keras.
+
+- **PremiumGAN (Pytorch model)**:  
+   Directory containing the implementation of PremiumGAN  built with PyTorch.
+
+- **Pretrained.StableDiffusion2Inpainting**:  
+   Directory storing pretrained weights and configurations for Stable Diffusion Inpainting models.
+
+- **Exploratory Data Analysis.ipynb**:  
+   Jupyter Notebook performing **Exploratory Data Analysis** to understand, clean, and preprocess the dataset.
+
+- **infer.py**:  
+   Python script for performing inference using the trained models to reconstruct images.
+
+- **inferGUI.ipynb/ inferGUI.py**:  
+   Jupyter Noteboothonk and Py implementing a GUI-based inference system for testing the model outputs interactively.
+
+- **install.sh**:  
+   Shell script for setting up the environment and installing dependencies for the project.
+
+- **output.png** / **with-mask-default-mask-seed0008.png**:  
+   Example output images showing input masked faces and corresponding reconstructed results.
+
+- **README.md**:  
+   Main documentation file explaining the project setup, structure, and usage instructions.
+  
 ***
 
 
